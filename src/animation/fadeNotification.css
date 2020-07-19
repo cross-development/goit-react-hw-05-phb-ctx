@@ -1,0 +1,24 @@
+/*
+	APP NOTIFICATION ANIMATION (use in App.js) - ENTER AND EXIT
+*/
+.Notification-fade-enter {
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+.Notification-fade-enter-active {
+	opacity: 1;
+	transform: translateX(0);
+	transition: all 250ms linear;
+}
+
+.Notification-fade-exit {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.Notification-fade-exit-active {
+	opacity: 0;
+	transform: translateX(100%);
+	transition: all 250ms linear;
+}

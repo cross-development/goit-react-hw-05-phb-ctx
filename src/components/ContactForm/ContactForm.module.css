@@ -1,0 +1,50 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin: 0 auto 15px;
+	padding: 10px;
+	width: 420px;
+	border-radius: 4px;
+	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.form label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.formInput {
+	display: block;
+	color: #171718;
+	font-size: 1.1rem;
+	padding: 6px 4px;
+	border-radius: 4px;
+	border: 1px solid #bdbdbd;
+	width: 100%;
+	outline: 0;
+}
+
+.contactFormButton {
+	display: block;
+	color: #fff;
+	background-color: #3f51b5;
+	border: 0;
+	outline: 0;
+	width: 100%;
+	margin: 0 auto;
+	padding: 8px 8px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+	font: 12px;
+	user-select: none;
+	transition: all 250ms ease-in-out;
+}
+
+.contactFormButton:hover {
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.22);
+	background-color: #3947a7;
+}

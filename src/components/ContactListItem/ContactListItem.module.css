@@ -1,0 +1,51 @@
+.listItem {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0 auto;
+	justify-content: space-between;
+	padding: 12px;
+	width: 420px;
+	border-radius: 4px;
+	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.listItem:not(:last-child) {
+	margin-bottom: 4px;
+}
+
+.contact {
+	display: flex;
+	justify-content: space-between;
+	flex: 0 0 70%;
+	font-size: 16px;
+}
+
+.contact span {
+	font-weight: 700;
+	display: block;
+}
+
+.contactListButton {
+	display: block;
+	color: #fff;
+	background-color: #e84118;
+	border: 0;
+	outline: 0;
+	padding: 6px;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+		0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+	font-size: 18px;
+	line-height: 16px;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	transition: all 250ms ease-in-out;
+}
+
+.contactListButton:hover {
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.22);
+	background-color: #c23616;
+}
