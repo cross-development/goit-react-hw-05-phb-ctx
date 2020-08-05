@@ -5,14 +5,14 @@ const Context = createContext();
 
 const themeConfig = {
 	light: {
-		backgroundColor: 'white',
-		color: 'black',
+		backgroundColor: '#ffffff',
+		color: '#000000',
 	},
 
 	dark: {
-		backgroundColor: 'black',
-		color: 'white',
-		border: '1px solid white',
+		backgroundColor: '#212121',
+		color: '#ffffff',
+		border: '1px solid #ffffff',
 	},
 };
 
@@ -33,9 +33,7 @@ export default class ThemeContext extends Component {
 		}
 	}
 
-	toggleTheme = () => {
-		this.setState({ theme: this.state.theme === 'dark' ? 'light' : 'dark' });
-	};
+	toggleTheme = () => this.setState({ theme: this.state.theme === 'dark' ? 'light' : 'dark' });
 
 	state = {
 		theme: 'light',

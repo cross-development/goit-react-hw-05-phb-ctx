@@ -6,15 +6,16 @@ import withTheme from '../../hoc/withTheme';
 //Styles
 import styles from './Filter.module.css';
 
-const Filter = ({ title, value, ctxTheme, onChangeFilter }) => {
+const Filter = ({ value, ctxTheme, onChangeFilter }) => {
 	const { theme, themeStyle } = ctxTheme;
+	const mainThemeStyle = theme === 'dark' ? themeStyle.dark : themeStyle.light;
 
 	return (
-		<div className={styles.filter} style={theme === 'dark' ? themeStyle.dark : themeStyle.light}>
+		<div className={styles.filter} style={mainThemeStyle}>
 			<label>
-				{title}
+				Find contacts by name
 				<input
-					className={styles.phonebookInput}
+					className={styles.input}
 					type="text"
 					autoComplete="off"
 					value={value}
@@ -25,15 +26,19 @@ const Filter = ({ title, value, ctxTheme, onChangeFilter }) => {
 	);
 };
 
-Filter.defaultProps = {
-	title: '',
-};
-
 Filter.propTypes = {
-	title: PropTypes.string,
 	value: PropTypes.string.isRequired,
+
 	onChangeFilter: PropTypes.func.isRequired,
-	ctxTheme: PropTypes.object.isRequired,
+
+	ctxTheme: PropTypes.shape({
+		onToggleTheme: PropTypes.func.isRequired,
+		theme: PropTypes.string.isRequired,
+		themeStyle: PropTypes.shape({
+			dark: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+			light: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+		}).isRequired,
+	}).isRequired,
 };
 
 export default withTheme(Filter);

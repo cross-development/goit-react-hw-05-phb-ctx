@@ -1,5 +1,6 @@
 //Core
 import React from 'react';
+import PropTypes from 'prop-types';
 //HOC
 import withTheme from '../../hoc/withTheme';
 //Styles
@@ -17,6 +18,17 @@ const ThemeSwitcher = ({ ctxTheme }) => {
 			</label>
 		</div>
 	);
+};
+
+ThemeSwitcher.propTypes = {
+	ctxTheme: PropTypes.shape({
+		onToggleTheme: PropTypes.func.isRequired,
+		theme: PropTypes.string.isRequired,
+		themeStyle: PropTypes.shape({
+			dark: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+			light: PropTypes.objectOf(PropTypes.string.isRequired).isRequired,
+		}).isRequired,
+	}).isRequired,
 };
 
 export default withTheme(ThemeSwitcher);

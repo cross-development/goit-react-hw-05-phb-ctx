@@ -36,16 +36,14 @@ export class ContactForm extends Component {
 		const { ctxTheme } = this.props;
 		const { theme, themeStyle } = ctxTheme;
 
+		const mainThemeStyle = theme === 'dark' ? themeStyle.dark : themeStyle.light;
+
 		return (
-			<form
-				className={styles.form}
-				onSubmit={this.handleSubmit}
-				style={theme === 'dark' ? themeStyle.dark : themeStyle.light}
-			>
+			<form className={styles.form} onSubmit={this.handleSubmit} style={mainThemeStyle}>
 				<label>
 					Name
 					<input
-						className={styles.formInput}
+						className={styles.input}
 						autoFocus
 						type="text"
 						name="name"
@@ -58,7 +56,7 @@ export class ContactForm extends Component {
 				<label>
 					Number
 					<input
-						className={styles.formInput}
+						className={styles.input}
 						type="text"
 						name="number"
 						autoComplete="off"
@@ -67,7 +65,7 @@ export class ContactForm extends Component {
 					/>
 				</label>
 
-				<button className={styles.contactFormButton} type="submit">
+				<button className={styles.button} type="submit">
 					Add contact
 				</button>
 			</form>

@@ -1,11 +1,11 @@
 /*
 	APP HEADING ANIMATION (use in App.js) - APPEAR
 */
-.Heading-fade-appear {
+.appear {
 	transform: translateX(-100%);
 }
 
-.Heading-fade-appear-active {
+.appearActive {
 	transform: translateX(0);
 	transition: all 500ms linear;
 }
