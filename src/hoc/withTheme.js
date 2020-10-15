@@ -1,7 +1,7 @@
 //Core
 import React from 'react';
 //Context
-import ThemeContext from '../context/ThemeContext';
+import ThemeContext from 'context/ThemeContext';
 
 const withTheme = WrappedComponent => {
 	return function WithTheme(props) {

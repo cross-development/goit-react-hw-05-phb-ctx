@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 //HOC
-import withTheme from '../../hoc/withTheme';
+import withTheme from 'hoc/withTheme';
 //Styles
 import styles from './ContactForm.module.css';
 
@@ -16,24 +16,21 @@ export class ContactForm extends Component {
 		number: '',
 	};
 
-	handleChange = e => {
-		const { name, value } = e.target;
-
-		this.setState({ [name]: value });
-	};
+	handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
 
 	handleSubmit = e => {
 		e.preventDefault();
 
-		const { name, number } = this.state;
-
-		this.props.onAddContact(name, number);
+		this.props.onAddContact(this.state.name, this.state.number);
 		this.setState({ name: '', number: '' });
 	};
 
 	render() {
-		const { name, number } = this.state;
-		const { ctxTheme } = this.props;
+		const {
+			state: { name, number },
+			props: { ctxTheme },
+		} = this;
+
 		const { theme, themeStyle } = ctxTheme;
 
 		const mainThemeStyle = theme === 'dark' ? themeStyle.dark : themeStyle.light;
@@ -43,12 +40,12 @@ export class ContactForm extends Component {
 				<label>
 					Name
 					<input
-						className={styles.input}
 						autoFocus
 						type="text"
 						name="name"
-						autoComplete="off"
 						value={name}
+						autoComplete="off"
+						className={styles.input}
 						onChange={this.handleChange}
 					/>
 				</label>
@@ -56,11 +53,11 @@ export class ContactForm extends Component {
 				<label>
 					Number
 					<input
-						className={styles.input}
 						type="text"
 						name="number"
-						autoComplete="off"
 						value={number}
+						autoComplete="off"
+						className={styles.input}
 						onChange={this.handleChange}
 					/>
 				</label>

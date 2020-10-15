@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 //HOC
-import withTheme from '../../hoc/withTheme';
+import withTheme from 'hoc/withTheme';
 //Styles
 import styles from './ThemeSwitcher.module.css';
 

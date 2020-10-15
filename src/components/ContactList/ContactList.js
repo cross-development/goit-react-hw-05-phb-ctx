@@ -6,7 +6,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ContactListItem from '../ContactListItem';
 //Styles
 import styles from './ContactList.module.css';
-import fade from '../../animation/fadeContactList.module.css';
+import fade from 'animation/fadeContactList.module.css';
 
 const ContactList = ({ contacts, onRemoveContact }) => (
 	<TransitionGroup component="ul" className={styles.contactList}>
@@ -22,7 +22,7 @@ ContactList.propTypes = {
 	onRemoveContact: PropTypes.func.isRequired,
 
 	contacts: PropTypes.arrayOf(
-		PropTypes.shape({
+		PropTypes.exact({
 			id: PropTypes.string.isRequired,
 			name: PropTypes.string.isRequired,
 			number: PropTypes.string.isRequired,

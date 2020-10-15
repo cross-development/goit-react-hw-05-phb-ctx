@@ -12,14 +12,14 @@ import ThemeSwitcher from '../ThemeSwitcher';
 //Utils
 import { v4 as uuid } from 'uuid';
 //Styles
-import fadeFilter from '../../animation/fadeFilter.module.css';
-import fadeHeading from '../../animation/fadeHeading.module.css';
-import fadeNotification from '../../animation/fadeNotification.module.css';
+import fadeFilter from 'animation/fadeFilter.module.css';
+import fadeHeading from 'animation/fadeHeading.module.css';
+import fadeNotification from 'animation/fadeNotification.module.css';
 
 export class App extends Component {
 	state = {
-		contacts: [],
 		filter: '',
+		contacts: [],
 		isNotice: false,
 	};
 
@@ -57,9 +57,7 @@ export class App extends Component {
 	};
 
 	setNotificationTimeout = delay => {
-		setTimeout(() => {
-			this.setState({ isNotice: false });
-		}, delay);
+		setTimeout(() => this.setState({ isNotice: false }), delay);
 	};
 
 	getVisibleContacts = () => {
@@ -71,6 +69,7 @@ export class App extends Component {
 	removeContactById = contactId => {
 		this.setState(prevState => ({
 			contacts: prevState.contacts.filter(({ id }) => id !== contactId),
+			filter: '',
 		}));
 	};
 

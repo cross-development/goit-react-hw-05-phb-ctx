@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 //HOC
-import withTheme from '../../hoc/withTheme';
+import withTheme from 'hoc/withTheme';
 //Styles
 import styles from './Filter.module.css';
 
@@ -15,10 +15,10 @@ const Filter = ({ value, ctxTheme, onChangeFilter }) => {
 			<label>
 				Find contacts by name
 				<input
-					className={styles.input}
 					type="text"
-					autoComplete="off"
 					value={value}
+					autoComplete="off"
+					className={styles.input}
 					onChange={e => onChangeFilter(e.target.value)}
 				/>
 			</label>
